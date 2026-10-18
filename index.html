@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>于斌 AI 产品经理作品集 · Magazine Style</title>
+<title>于斌 AIGC 内容与 AI 应用产品经理作品集</title>
+<meta name="description" content="于斌的 AIGC 内容与 AI 应用产品经理作品集，包含 AI 赛事海报、AIGC 短视频创作、Naya Agent/RAG 与 Seko 产品研究。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="于斌｜AIGC 内容与 AI 应用产品经理作品集">
+<meta property="og:description" content="从真实业务 MVP、AIGC 内容迭代到 Agent/RAG 产品验证。">
+<meta property="og:url" content="https://binnnc.github.io/BinYu-AI-product/">
+<meta property="og:image" content="https://binnnc.github.io/BinYu-AI-product/images/aigc/experiment-04.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -186,6 +193,33 @@
   .frame-cap .idx{font-family:var(--mono);opacity:.5}
   figure.tile{display:flex;flex-direction:column;margin:0;min-width:0}
   figure.tile > .frame-img{flex:0 0 auto}
+  /* ============ AIGC 创作实验组件 ============ */
+  .iteration-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.35vw;margin-top:2.6vh;min-height:0;flex:1}
+  .iteration-card{display:grid;grid-template-rows:minmax(0,1fr) auto;border-top:1px solid currentColor;border-color:rgba(127,127,127,.34);padding-top:1.4vh;min-width:0;min-height:0}
+  .iteration-card img{width:100%;height:100%;min-height:0;object-fit:cover;display:block;background:rgba(127,127,127,.08)}
+  .iteration-copy{padding-top:1.1vh;display:grid;gap:.45vh}
+  .iteration-copy strong{font-family:var(--serif-zh);font-size:max(14px,1.16vw);font-weight:700;line-height:1.25}
+  .iteration-copy span{font-family:var(--sans-zh);font-size:max(11px,.86vw);line-height:1.45;opacity:.72}
+  .iteration-meta{font-family:var(--mono)!important;font-size:max(9px,.7vw)!important;letter-spacing:.08em;opacity:.52!important;text-transform:uppercase}
+  .video-compare{display:grid;grid-template-columns:.82fr 1.18fr;gap:3vw;align-items:stretch;min-height:0;flex:1;margin-top:2.5vh}
+  .video-panel{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:1.1vh;min-height:0}
+  .video-panel video{width:100%;height:100%;min-height:0;object-fit:contain;background:#050506;border:1px solid rgba(127,127,127,.28);border-radius:4px}
+  .video-panel h3{font-family:var(--serif-zh);font-size:max(16px,1.4vw);line-height:1.2}
+  .video-panel p{font-family:var(--sans-zh);font-size:max(11px,.9vw);line-height:1.5;opacity:.7}
+  .metric-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2vw;margin-top:2.7vh}
+  .insight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2vw;margin-top:3vh}
+  .insight-item{padding-top:1.4vh;border-top:1px solid currentColor;border-color:rgba(127,127,127,.3)}
+  .insight-item strong{display:block;font-family:var(--serif-zh);font-size:max(14px,1.2vw);margin-bottom:.8vh}
+  .insight-item span{display:block;font-family:var(--sans-zh);font-size:max(11px,.88vw);line-height:1.5;opacity:.72}
+  .score-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4vw;min-height:0;flex:1;margin-top:3vh}
+  .anchor-list{display:grid;grid-template-columns:repeat(5,1fr);gap:.8vw;margin-top:2vh}
+  .anchor{padding:1.2vh .8vw;border-top:2px solid currentColor;min-width:0}
+  .anchor b{display:block;font-family:var(--serif-en);font-size:2.5vw;line-height:1}
+  .anchor span{display:block;font-size:max(10px,.78vw);line-height:1.45;opacity:.68;margin-top:.65vh}
+  .method-list{display:grid;gap:1.2vh}
+  .method-row{display:grid;grid-template-columns:3.4vw 1fr;gap:1vw;align-items:start;padding-top:1.1vh;border-top:1px solid rgba(127,127,127,.3)}
+  .method-row b{font-family:var(--serif-en);font-size:1.7vw;line-height:1}
+  .method-row span{font-family:var(--sans-zh);font-size:max(12px,.95vw);line-height:1.5;opacity:.76}
 
   /* ============ 导航 ============ */
   #nav{position:fixed;left:50%;bottom:2.6vh;transform:translateX(-50%);z-index:30;display:flex;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
@@ -487,6 +521,19 @@
     .h-xl{font-size:9vw}
     .pipeline{grid-template-columns:repeat(2,1fr)}
     .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
+    .iteration-grid{grid-template-columns:repeat(2,1fr)}
+    .video-compare,.score-grid{grid-template-columns:1fr 1fr}
+    .metric-strip,.insight-grid{grid-template-columns:repeat(2,1fr)}
+    .slide[data-slide-id="creator-data"] .frame{padding-top:1vh!important;gap:1vh!important}
+    .slide[data-slide-id="creator-data"] .h-xl{font-size:7vw!important;line-height:1.05}
+    .slide[data-slide-id="creator-data"] .metric-strip{margin-top:1.2vh!important;gap:1vh 2vw!important}
+    .slide[data-slide-id="creator-data"] .stat-card{padding-top:.7vh;gap:.25vh}
+    .slide[data-slide-id="creator-data"] .stat-nb{font-size:5vw!important}
+    .slide[data-slide-id="creator-data"] .frame-img{height:17vh!important}
+    .slide[data-slide-id="creator-data"] .insight-grid{gap:.7vh 2vw!important}
+    .slide[data-slide-id="creator-data"] .insight-item{padding-top:.6vh}
+    .slide[data-slide-id="creator-data"] .insight-item strong{font-size:3.5vw;margin-bottom:.3vh}
+    .slide[data-slide-id="creator-data"] .insight-item span{font-size:2.7vw;line-height:1.35}
   }
 </style>
 </head>
@@ -538,13 +585,13 @@
 <section class="slide hero dark" data-slide-id="cover">
   <div class="chrome">
     <div class="left"><span>AI Product Portfolio</span><span class="sep"></span><span>2026</span></div>
-    <div>01 / 11</div>
+    <div>01 / 14</div>
   </div>
   <div class="frame" style="display:grid;gap:5vh;align-content:center;min-height:80vh">
-    <div class="kicker" data-anim>个人作品集 · AI 产品经理方向</div>
-    <h1 class="h-hero" style="font-size:8.2vw;max-width:76vw" data-anim>AI 产品经理<br>作品集</h1>
+    <div class="kicker" data-anim>个人作品集 · AIGC 内容与 AI 应用方向</div>
+    <h1 class="h-hero" style="font-size:7.5vw;max-width:82vw" data-anim>AIGC 内容产品经理<br>作品集</h1>
     <div class="meta-row" style="font-size:max(14px,1.05vw);opacity:.78" data-anim>
-      <span>作者：于斌</span><span>·</span><span>AI 产品经理 / AIGC 产品 / AI 应用产品</span>
+      <span>作者：于斌</span><span>·</span><span>AIGC 内容产品 / AI 创作工具 / AI 应用产品</span>
     </div>
   </div>
   <div class="foot">
@@ -556,29 +603,29 @@
 <section class="slide light" data-slide-id="positioning">
   <div class="chrome">
     <div class="left"><span>Profile · Positioning</span><span class="sep"></span><span>AI Product Manager</span></div>
-    <div>02 / 11</div>
+    <div>02 / 14</div>
   </div>
   <div class="frame" style="padding-top:5vh">
     <div class="kicker" data-anim>Positioning</div>
     <h2 class="h-xl" style="font-size:6.2vw" data-anim>定位</h2>
     <p class="lead" style="max-width:78vw;margin-top:2.6vh;font-size:2.15vw" data-anim>
-      以 AI 产品经理 / AIGC 产品 / AI 应用产品为主线，关注真实业务场景中的需求识别、产品方案、模型能力边界与数据验证。
+      以 AIGC 内容产品为主线，既亲自完成图像与视频生产，也从创作者视角识别工作流、模型能力边界与商业化机会。
     </p>
     <div class="grid-3" style="margin-top:8vh">
       <div class="stat-card" data-anim>
+        <div class="stat-label">Create</div>
+        <div class="stat-nb" style="font-size:4.2vw">真实创作</div>
+        <div class="stat-note">首帧、分镜、群像动作、声音设计、剪辑与发布复盘。</div>
+      </div>
+      <div class="stat-card" data-anim>
         <div class="stat-label">Product</div>
-        <div class="stat-nb" style="font-size:4.2vw">产品方案</div>
-        <div class="stat-note">需求拆解、流程设计、PRD、Axure 原型与 MVP 验证。</div>
+        <div class="stat-nb" style="font-size:4.2vw">产品闭环</div>
+        <div class="stat-note">需求洞察、工作流设计、模型评测、MVP 与原型表达。</div>
       </div>
       <div class="stat-card" data-anim>
-        <div class="stat-label">AI</div>
-        <div class="stat-nb" style="font-size:4.2vw">技术理解</div>
-        <div class="stat-note">AIGC、Agent、RAG、Embedding 检索与模型评测实践。</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Data</div>
+        <div class="stat-label">Validate</div>
         <div class="stat-nb" style="font-size:4.2vw">数据验证</div>
-        <div class="stat-note">Python 数据分析、转化漏斗、指标拆解与业务复盘。</div>
+        <div class="stat-note">转化漏斗、内容指标、结构化测试与迭代复盘。</div>
       </div>
     </div>
   </div>
@@ -591,19 +638,19 @@
 <section class="slide dark" data-slide-id="contents">
   <div class="chrome">
     <div class="left"><span>Contents</span><span class="sep"></span><span>Project Map</span></div>
-    <div>03 / 11</div>
+    <div>03 / 14</div>
   </div>
   <div class="frame grid-2-6-6" style="padding-top:6vh">
     <div>
       <div class="kicker" data-anim>Contents</div>
       <h2 class="h-xl" style="font-size:6.2vw" data-anim>目录</h2>
-      <p class="lead" style="margin-top:3vh;max-width:38vw" data-anim>三个项目模块，分别对应商业化 MVP、AI Agent 原型和 AIGC 产品研究。</p>
+      <p class="lead" style="margin-top:3vh;max-width:38vw" data-anim>四组真实实践，覆盖商业化 MVP、内容生产、AI Agent 与视频创作工具评测。</p>
     </div>
     <div class="col" style="gap:2vh" data-anim>
-      <div class="rowline"><div class="k">01</div><div class="v">AI 赛事海报 MVP：产品设计、转化漏斗、Axure 原型</div><div class="m">P04-P06</div></div>
-      <div class="rowline"><div class="k">02</div><div class="v">Naya 微信 AI 助手：长期陪伴定位、RAG 记忆验证</div><div class="m">P07-P08</div></div>
-      <div class="rowline"><div class="k">03</div><div class="v">AIGC 视频 Agent：竞品研究、创作链路与模型评测</div><div class="m">P09-P10</div></div>
-      <div class="rowline"><div class="k">04</div><div class="v">总结：AI 产品经理能力闭环</div><div class="m">P11</div></div>
+      <div class="rowline"><div class="k">01</div><div class="v">AI 赛事海报：MVP 流程、商业验证与后台原型</div><div class="m">P04-P06</div></div>
+      <div class="rowline"><div class="k">02</div><div class="v">AIGC 短视频：四轮实验、“大牛”拆解与数据复盘</div><div class="m">P07-P09</div></div>
+      <div class="rowline"><div class="k">03</div><div class="v">Naya 微信 AI Agent：长期记忆与 RAG 验证</div><div class="m">P10-P11</div></div>
+      <div class="rowline"><div class="k">04</div><div class="v">Seko 视频 Agent：产品研究与稳定评测体系</div><div class="m">P12-P13</div></div>
     </div>
   </div>
   <div class="foot">
@@ -615,7 +662,7 @@
 <section class="slide dark" data-slide-id="poster-mvp">
   <div class="chrome">
     <div class="left"><span>Case 01 · AI Poster MVP</span><span class="sep"></span><span>爱云动</span></div>
-    <div>04 / 11</div>
+    <div>04 / 14</div>
   </div>
   <div class="frame">
     <div class="kicker">Product Design · MVP Flow</div>
@@ -648,7 +695,7 @@
 <section class="slide dark" data-slide-id="poster-funnel">
   <div class="chrome">
     <div class="left"><span>Case 01 · Commercial Validation</span><span class="sep"></span><span>六盘水马拉松</span></div>
-    <div>05 / 11</div>
+    <div>05 / 14</div>
   </div>
   <div class="frame grid-2-6-6" style="padding-top:3vh">
     <div>
@@ -678,7 +725,7 @@
 <section class="slide light" data-slide-id="poster-artifacts">
   <div class="chrome">
     <div class="left"><span>Case 01 · Product Artifacts</span><span class="sep"></span><span>Axure Prototype</span></div>
-    <div>06 / 11</div>
+    <div>06 / 14</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker" data-anim>PRD / Flow / Axure</div>
@@ -707,10 +754,112 @@
   </div>
 </section>
 
+<section class="slide dark" data-slide-id="creator-experiments">
+  <div class="chrome">
+    <div class="left"><span>Case 02 · Creator Lab</span><span class="sep"></span><span>Four Experiments</span></div>
+    <div>07 / 14</div>
+  </div>
+  <div class="frame" style="padding-top:2.5vh">
+    <div class="kicker" data-anim>Hands-on AIGC Production</div>
+    <h2 class="h-xl" style="font-size:4.8vw" data-anim>从“能生成”到“能导演”</h2>
+    <p class="lead" style="font-size:1.32vw;max-width:82vw;margin-top:1.2vh" data-anim>
+      2026 年 10 月连续发布 4 条 AIGC 短视频；每条经历 3–5 轮生成、失败镜头重组与人工质检，逐步补齐首帧、持续动态、群像调度和声音设计。
+    </p>
+    <div class="iteration-grid">
+      <article class="iteration-card" data-anim>
+        <img src="images/aigc/experiment-01.jpg" alt="第一轮 AIGC 视觉短片首帧">
+        <div class="iteration-copy"><strong>01 · 视觉质量</strong><span>验证首帧审美与公开发布闭环。</span><span class="iteration-meta">4s · 48 plays · 42.38% finish</span></div>
+      </article>
+      <article class="iteration-card" data-anim>
+        <img src="images/aigc/experiment-02.jpg" alt="第二轮 AIGC 古风演唱短片首帧">
+        <div class="iteration-copy"><strong>02 · 音频驱动</strong><span>测试对口型与音乐驱动，暴露人物静止和开场偏弱。</span><span class="iteration-meta">15s · 564 plays · 6.41% finish</span></div>
+      </article>
+      <article class="iteration-card" data-anim>
+        <img src="images/aigc/experiment-03.jpg" alt="第三轮 AIGC 强风动态短片首帧">
+        <div class="iteration-copy"><strong>03 · 持续动态</strong><span>增强角色、背景和镜头运动，改善画面互动。</span><span class="iteration-meta">15s · 884 plays · 60.29% bounce</span></div>
+      </article>
+      <article class="iteration-card" data-anim>
+        <img src="images/aigc/experiment-04.jpg" alt="第四轮 AIGC 宋式田园群像首帧">
+        <div class="iteration-copy"><strong>04 · 导演式创作</strong><span>加入钩子、多人群像、分镜叙事、对白与动作拟音。</span><span class="iteration-meta">16s · 899 plays · 31.3% bounce</span></div>
+      </article>
+    </div>
+  </div>
+  <div class="foot">
+    <div>AIGC 短视频实验 · 4 次迭代</div>
+    <div>Creator Lab</div>
+  </div>
+</section>
+
+<section class="slide light" data-slide-id="creator-rural">
+  <div class="chrome">
+    <div class="left"><span>Case 02 · Representative Work</span><span class="sep"></span><span>宋式田园</span></div>
+    <div>08 / 14</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker" data-anim>Representative Work · Seedance / Midjourney / Codex</div>
+    <h2 class="h-xl" style="font-size:4.7vw" data-anim>“大牛”：把生成结果变成完整作品</h2>
+    <div class="video-compare">
+      <div class="video-panel" data-anim>
+        <video controls playsinline preload="metadata" poster="images/aigc/experiment-01.jpg">
+          <source src="videos/experiment-01.mp4" type="video/mp4">
+          当前浏览器无法内嵌播放，请<a href="videos/experiment-01.mp4">直接打开视频</a>。
+        </video>
+        <div><h3>起点 · 单镜头视觉实验</h3><p>内容主要依赖画面质感，缺少镜头事件、角色关系和声音层次。</p></div>
+      </div>
+      <div class="video-panel" data-anim>
+        <video controls playsinline preload="metadata" poster="images/aigc/experiment-04.jpg">
+          <source src="videos/rural-final.mp4" type="video/mp4">
+          当前浏览器无法内嵌播放，请<a href="videos/rural-final.mp4">直接打开视频</a>。
+        </video>
+        <div><h3>第四轮 · 多镜头群像作品</h3><p>牛头特写建立首秒钩子；三人群像承担互动，加入对白、环境声与动作拟音，失败镜头拆分后重新编排。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>单镜头 → 多镜头 · 画面生成 → 导演式工作流</div>
+    <div>Representative Work</div>
+  </div>
+</section>
+
+<section class="slide dark" data-slide-id="creator-data">
+  <div class="chrome">
+    <div class="left"><span>Case 02 · Data Review</span><span class="sep"></span><span>Creator Insights</span></div>
+    <div>09 / 14</div>
+  </div>
+  <div class="frame grid-2-6-6" style="padding-top:2.2vh;gap:3vw">
+    <div>
+      <div class="kicker" data-anim>Publish · Measure · Rebuild</div>
+      <h2 class="h-xl" style="font-size:4.6vw" data-anim>数据不是成绩单，<br>而是下一轮分镜依据</h2>
+      <div class="metric-strip" style="grid-template-columns:repeat(2,1fr)" data-anim>
+        <div class="stat-card"><div class="stat-label">Total Plays</div><div class="stat-nb" style="font-size:3.8vw">2,395</div><div class="stat-note">4 条公开实验累计播放</div></div>
+        <div class="stat-card"><div class="stat-label">Engagement</div><div class="stat-nb" style="font-size:3.8vw">128</div><div class="stat-note">112 赞 · 10 收藏 · 6 分享</div></div>
+        <div class="stat-card"><div class="stat-label">2s Bounce</div><div class="stat-nb" style="font-size:3.8vw">31.3%</div><div class="stat-note">第四轮，前一轮为 60.29%</div></div>
+        <div class="stat-card"><div class="stat-label">Completion</div><div class="stat-nb" style="font-size:3.8vw">12.22%</div><div class="stat-note">第四轮，前两条长视频约 6%</div></div>
+      </div>
+    </div>
+    <div class="col" style="gap:1.8vh;min-height:0">
+      <figure class="frame-img fit-contain" style="height:31vh" data-anim>
+        <img src="images/aigc/douyin-dashboard.jpg" alt="四条 AIGC 短视频的抖音后台数据">
+        <figcaption class="img-cap">Douyin Studio · Four Published Experiments</figcaption>
+      </figure>
+      <div class="insight-grid" style="grid-template-columns:repeat(2,1fr);margin-top:0" data-anim>
+        <div class="insight-item"><strong>首帧必须可动</strong><span>好看的静态图不一定能生成有事件的镜头。</span></div>
+        <div class="insight-item"><strong>群像需要调度</strong><span>明确人物关系、视线和异步动作，避免同步微笑与摆拍。</span></div>
+        <div class="insight-item"><strong>声音要分镜绑定</strong><span>动作音效不能只写全局提示，需要镜头级指令与后期补录。</span></div>
+        <div class="insight-item"><strong>局部修改决定成本</strong><span>单镜头失败不应整条重做，创作工具需要可定位、可替换的工作流。</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>创作数据复盘 · 首帧 / 群像 / 声音 / 局部修改</div>
+    <div>Product Insights</div>
+  </div>
+</section>
+
 <section class="slide dark" data-slide-id="naya-overview">
   <div class="chrome">
     <div class="left"><span>Case 02 · Naya</span><span class="sep"></span><span>WeChat AI Agent</span></div>
-    <div>07 / 11</div>
+    <div>10 / 14</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:5vh">
     <div>
@@ -744,7 +893,7 @@
 <section class="slide light" data-slide-id="naya-rag">
   <div class="chrome">
     <div class="left"><span>Case 02 · RAG Evaluation</span><span class="sep"></span><span>Memory MVP</span></div>
-    <div>08 / 11</div>
+    <div>11 / 14</div>
   </div>
   <div class="frame grid-2-6-6" style="padding-top:4vh">
     <div>
@@ -771,10 +920,10 @@
   </div>
 </section>
 
-<section class="slide dark" data-slide-id="aigc-video">
+<section class="slide dark" data-slide-id="seko-research">
   <div class="chrome">
     <div class="left"><span>Case 03 · SenseTime</span><span class="sep"></span><span>AIGC Video Agent</span></div>
-    <div>09 / 11</div>
+    <div>12 / 14</div>
   </div>
   <div class="frame" style="padding-top:4vh">
     <div>
@@ -801,54 +950,66 @@
   </div>
 </section>
 
-<section class="slide light" data-slide-id="model-eval">
+<section class="slide light" data-slide-id="seko-evaluation">
   <div class="chrome">
-    <div class="left"><span>Case 03 · Model Evaluation</span><span class="sep"></span><span>LLM Alignment</span></div>
-    <div>10 / 11</div>
+    <div class="left"><span>Case 04 · Evaluation Design</span><span class="sep"></span><span>Stable Reference</span></div>
+    <div>13 / 14</div>
   </div>
-  <div class="frame grid-2-6-6" style="padding-top:4vh">
+  <div class="frame" style="padding-top:2.8vh">
     <div>
-    <div class="kicker" data-anim>Model Practice</div>
-    <h2 class="h-xl" style="font-size:4.8vw" data-anim>大模型微调与评测实践</h2>
-    <p class="lead" style="font-size:1.38vw;max-width:44vw;margin-top:1.6vh" data-anim>
-      基于 Qwen2.5-1.5B、LLaMA-Factory 与 OpenCompass 完成中文指令数据清洗、LoRA SFT、模型合并、推理验证与 CMMLU 评测。
+    <div class="kicker" data-anim>Evaluation Framework</div>
+    <h2 class="h-xl" style="font-size:4.6vw" data-anim>不把竞品当标尺，建立稳定参考系</h2>
+    <p class="lead" style="font-size:1.3vw;max-width:84vw;margin-top:1.2vh" data-anim>
+      以“民国雨夜饭店门口的双人冲突”为统一任务，同时测试人物连续性、场景遵循、物理动作与中文招牌显示；用可用性锚点而非产品排名定义分数。
     </p>
-    <div class="grid-4" style="margin-top:3.2vh;gap:2vh 2.6vw">
-      <div class="stat-card" data-anim><div class="stat-label">SFT</div><div class="stat-nb" style="font-size:3.6vw">LoRA</div><div class="stat-note">指令微调、合并与推理验证</div></div>
-      <div class="stat-card" data-anim><div class="stat-label">Benchmark</div><div class="stat-nb" style="font-size:3.6vw">CMMLU</div><div class="stat-note">OpenCompass 评测</div></div>
-      <div class="stat-card" data-anim><div class="stat-label">Preference Data</div><div class="stat-nb" style="font-size:3.6vw">350</div><div class="stat-note">组 DPO 偏好样本</div></div>
-      <div class="stat-card" data-anim><div class="stat-label">Criteria</div><div class="stat-nb" style="font-size:3.6vw">5</div><div class="stat-note">安全/事实/完整/可用/格式</div></div>
     </div>
-    </div>
-    <div class="col" style="gap:2vh" data-anim>
-      <figure class="frame-img fit-contain" style="height:25vh">
-        <img src="images/evidence/sensetime-opencompass-cmmlu.png" alt="OpenCompass CMMLU logical accuracy 图表">
-        <figcaption class="img-cap">OpenCompass · CMMLU Logical</figcaption>
-      </figure>
-      <figure class="frame-img fit-contain" style="height:32vh">
-        <img src="images/evidence/sensetime-dpo-report-page1.png" alt="第4周 DPO 偏好对齐报告截图">
-        <figcaption class="img-cap">DPO Alignment · Preference Dataset / Rewards</figcaption>
-      </figure>
+    <div class="score-grid">
+      <div data-anim>
+        <div class="meta">1–5 Usability Anchors</div>
+        <div class="anchor-list">
+          <div class="anchor"><b>5</b><span>无明显错误，可直接使用</span></div>
+          <div class="anchor"><b>4</b><span>有瑕疵，但整体可用</span></div>
+          <div class="anchor"><b>3</b><span>局部调整后可用</span></div>
+          <div class="anchor"><b>2</b><span>核心要求未完成，需要重做</span></div>
+          <div class="anchor"><b>1</b><span>严重错误，无法使用</span></div>
+        </div>
+        <div class="callout" style="margin-top:3vh">
+          <span class="q-big">分数回答的是“能否进入生产”，不是“看起来谁更惊艳”。</span>
+          <span class="callout-src">Stable Evaluation Principle</span>
+        </div>
+      </div>
+      <div class="method-list" data-anim>
+        <div class="method-row"><b>01</b><span>官网、定价与版本公告建立公开事实层，保留原始链接并人工复核。</span></div>
+        <div class="method-row"><b>02</b><span>小红书、抖音真实反馈验证公开叙事，重点寻找冲突和反例。</span></div>
+        <div class="method-row"><b>03</b><span>同一提示词分别生成一轮，由 2 名评测者独立评分。</span></div>
+        <div class="method-row"><b>04</b><span>出现 3 分与 4 分边界分歧时，引入两两对比辅助校准。</span></div>
+        <div class="method-row"><b>05</b><span>最终输出一致性、可编辑度、工作流与成本判断，并转化为产品建议。</span></div>
+      </div>
     </div>
   </div>
   <div class="foot">
-    <div>商汤科技 · 模型评测与对齐实践</div>
-    <div>Model Evaluation</div>
+    <div>Seko · 生成质量与一致性评测</div>
+    <div>Evaluation Design</div>
   </div>
 </section>
 
 <section class="slide hero dark" data-slide-id="closing" data-animate="quote">
   <div class="chrome">
     <div class="left"><span>Closing · Takeaway</span><span class="sep"></span><span>AI Product Manager</span></div>
-    <div>11 / 11</div>
+    <div>14 / 14</div>
   </div>
   <div class="frame" style="display:grid;gap:5vh;align-content:center;min-height:80vh">
     <div class="kicker" data-anim>Takeaway</div>
     <blockquote style="font-family:var(--serif-zh);font-weight:700;font-size:5.2vw;line-height:1.18;max-width:78vw">
-      <span data-anim="line" style="display:block">"把 AI 能力，</span>
-      <span data-anim="line" style="display:block">推进到真实业务里。"</span>
+      <span data-anim="line" style="display:block">“先进入真实生产，</span>
+      <span data-anim="line" style="display:block">再定义真正的问题。”</span>
     </blockquote>
-    <p class="lead" style="max-width:62vw;opacity:.72;font-size:1.75vw" data-anim>需求判断、方案表达、技术边界、数据验证与工程交付，共同构成我面向 AI 产品经理岗位的核心能力。</p>
+    <p class="lead" style="max-width:68vw;opacity:.72;font-size:1.75vw" data-anim>从 AI 海报、AIGC 短视频到 Agent 与模型评测，我持续把创作者体验、产品方案和数据验证放进同一个闭环。</p>
+    <div class="meta-row" style="font-size:max(13px,1vw);opacity:.76" data-anim>
+      <a href="mailto:yb15966924281@163.com" style="color:inherit">yb15966924281@163.com</a>
+      <span>·</span>
+      <a href="https://github.com/Binnnc/BinYu-AI-product" target="_blank" rel="noreferrer" style="color:inherit">github.com/Binnnc/BinYu-AI-product</a>
+    </div>
   </div>
   <div class="foot">
     <div>AI Product Portfolio · Bin Yu</div>
@@ -870,8 +1031,8 @@ const SPEAKER_NOTES = [
     "minutes": 0.4,
     "purpose": "展示作品集标题、作者和求职方向。",
     "talk": [
-      "作品集围绕 AI 产品经理方向组织。",
-      "核心项目包括 AI 海报、Naya 微信 AI 助手和商汤 AIGC 研究。",
+      "作品集围绕 AIGC 内容产品与 AI 应用产品方向组织。",
+      "核心项目包括 AI 海报、AIGC 短视频、Naya 和 Seko 产品研究。",
       "开场只做身份说明，不展开复杂论证。"
     ],
     "transition": "下一页给出个人定位。"
@@ -883,8 +1044,8 @@ const SPEAKER_NOTES = [
     "minutes": 0.7,
     "purpose": "说明候选人的求职方向和能力结构。",
     "talk": [
-      "定位为 AI 产品经理、AIGC 产品和 AI 应用产品方向。",
-      "能力由产品方案、AI 技术理解和数据验证组成。",
+      "定位为 AIGC 内容产品经理和 AI 应用产品经理。",
+      "能力由真实创作、产品闭环和数据验证组成。",
       "后续项目分别对应这些能力。"
     ],
     "transition": "再用目录说明作品集结构。"
@@ -896,7 +1057,7 @@ const SPEAKER_NOTES = [
     "minutes": 0.5,
     "purpose": "快速说明项目结构。",
     "talk": [
-      "作品集分为三个项目模块和一个总结页。",
+      "作品集分为四个项目模块和一个总结页。",
       "每个模块都尽量展示项目背景、产物和结果。",
       "目录页用于避免直接跳入项目造成理解断层。"
     ],
@@ -939,7 +1100,46 @@ const SPEAKER_NOTES = [
       "这页放在 AI 海报项目下，更符合项目叙事。",
       "页面只展示项目产物和产品表达。"
     ],
-    "transition": "第二个项目进入 Naya 微信 AI 助手。"
+    "transition": "第二个项目进入 AIGC 短视频真实创作实验。"
+  },
+  {
+    "id": "creator-experiments",
+    "title": "从能生成到能导演",
+    "section": "AIGC 创作",
+    "minutes": 0.9,
+    "purpose": "展示四条公开作品构成的能力迭代路径。",
+    "talk": [
+      "四条视频不是单纯作品陈列，而是连续的创作实验。",
+      "每轮分别补齐视觉质量、音频驱动、持续动态和导演式创作。",
+      "每条经历 3 到 5 轮生成、失败镜头重组和人工质检。"
+    ],
+    "transition": "下一页用大牛作品展示前后差异。"
+  },
+  {
+    "id": "creator-rural",
+    "title": "大牛代表作品",
+    "section": "AIGC 创作",
+    "minutes": 1.1,
+    "purpose": "用可播放成片证明完整内容生产能力。",
+    "talk": [
+      "第一轮主要依赖单镜头画面质感。",
+      "大牛增加牛头钩子、多人群像、分镜叙事、对白和动作拟音。",
+      "对失败镜头做拆分和重组，而不是整条视频反复重做。"
+    ],
+    "transition": "作品发布之后，再用后台数据寻找下一轮问题。"
+  },
+  {
+    "id": "creator-data",
+    "title": "创作数据与产品洞察",
+    "section": "AIGC 创作",
+    "minutes": 1.0,
+    "purpose": "展示内容数据如何转化为创作决策与产品判断。",
+    "talk": [
+      "第四轮 2 秒跳出率从前一轮的 60.29% 降至 31.3%。",
+      "完播率由前两条长视频约 6% 提升至 12.22%。",
+      "由此沉淀首帧可动性、群像调度、声音绑定和局部修改四类产品痛点。"
+    ],
+    "transition": "第三个项目进入 Naya 微信 AI Agent。"
   },
   {
     "id": "naya-overview",
@@ -965,10 +1165,10 @@ const SPEAKER_NOTES = [
       "20 条记忆类测试问题 Top-5 全部命中预期关键记忆。",
       "右侧示例用于模拟截图式证据展示，后续可替换为真实运行截图。"
     ],
-    "transition": "第三个项目展示商汤 AIGC 视频 Agent 产品研究。"
+    "transition": "第四个项目展示 Seko 视频 Agent 产品研究。"
   },
   {
-    "id": "aigc-video",
+    "id": "seko-research",
     "title": "AIGC 视频创作 Agent 产品研究",
     "section": "商汤",
     "minutes": 0.8,
@@ -978,18 +1178,18 @@ const SPEAKER_NOTES = [
       "分析从 Prompt 输入到局部重生成的产品链路。",
       "输出导演式 Agent 的产品机会判断。"
     ],
-    "transition": "同一段实习中还有模型评测与对齐实践。"
+    "transition": "竞品持续迭代，因此下一页重点说明如何建立稳定评测参考系。"
   },
   {
-    "id": "model-eval",
-    "title": "大模型微调与评测实践",
+    "id": "seko-evaluation",
+    "title": "生成质量与一致性评测",
     "section": "商汤",
     "minutes": 0.8,
-    "purpose": "展示候选人对大模型评测和对齐流程的理解。",
+    "purpose": "展示稳定评测参考系与分歧处理方法。",
     "talk": [
-      "基于 Qwen、LLaMA-Factory 和 OpenCompass 完成评测流程。",
-      "构建 350 组 DPO 偏好样本。",
-      "这页补充技术理解，不喧宾夺主。"
+      "统一任务同时测试人物、动作、场景与中文显示。",
+      "1 到 5 分锚点基于生产可用性，而不是竞品排名。",
+      "两名评测者独立评分，对边界分歧使用两两对比校准。"
     ],
     "transition": "最后收束为 AI 产品经理能力闭环。"
   },
@@ -1000,8 +1200,8 @@ const SPEAKER_NOTES = [
     "minutes": 0.5,
     "purpose": "总结候选人面向 AI 产品经理岗位的核心能力。",
     "talk": [
-      "核心能力是把 AI 能力推进到真实业务中。",
-      "能力闭环包括需求、方案、边界、数据和交付。",
+      "核心方法是先进入真实生产，再定义真正的问题。",
+      "能力闭环包括创作、需求、方案、模型边界、数据和交付。",
       "结束页不放内部待办或下一步材料。"
     ],
     "transition": "进入项目问答或具体作品展开。"
